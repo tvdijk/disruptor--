@@ -30,7 +30,6 @@
 #include <vector>
 
 #include "disruptor/wait_strategy.h"
-#include "disruptor/sequence.h"
 
 namespace disruptor {
 

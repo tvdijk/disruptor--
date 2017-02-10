@@ -26,14 +26,10 @@
 #ifndef DISRUPTOR_WAITSTRATEGY_H_  // NOLINT
 #define DISRUPTOR_WAITSTRATEGY_H_  // NOLINT
 
-#include <sys/time.h>
-
 #include <chrono>
 #include <thread>
 #include <condition_variable>
 #include <vector>
-
-#include "disruptor/sequence.h"
 
 namespace disruptor {
 
@@ -122,9 +118,9 @@ class BlockingStrategy;
 
 // defaults
 using kDefaultWaitStrategy = BusySpinStrategy;
-constexpr int64_t kDefaultRetryLoops = 200L;
+const int64_t kDefaultRetryLoops = 200L;
 using kDefaultDuration = std::chrono::milliseconds;
-constexpr int kDefaultDurationValue = 1;
+const int kDefaultDurationValue = 1;
 
 // used internally
 static inline std::function<int64_t()> buildMinSequenceFunction(

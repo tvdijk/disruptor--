@@ -34,16 +34,17 @@
 #define DISRUPTOR_SEQUENCE_H_  // NOLINT
 
 #include <atomic>
+#include <vector>
 
 #include "disruptor/utils.h"
 
 namespace disruptor {
 
 // special cursor values
-constexpr int64_t kInitialCursorValue = -1L;
-constexpr int64_t kAlertedSignal = -2L;
-constexpr int64_t kTimeoutSignal = -3L;
-constexpr int64_t kFirstSequenceValue = kInitialCursorValue + 1L;
+const int64_t kInitialCursorValue = -1L;
+const int64_t kAlertedSignal = -2L;
+const int64_t kTimeoutSignal = -3L;
+const int64_t kFirstSequenceValue = kInitialCursorValue + 1L;
 
 // Sequence counter.
 class Sequence {
