@@ -106,7 +106,7 @@ class SleepingStrategy;
 // busy spin on the dependents' sequences and can be cancelled by affecting the
 // `alerted` atomic.
 //
-// The user can optionnaly provide a maximum timeout to the blocking operation,
+// The user can optionally provide a maximum timeout to the blocking operation,
 // see std::condition_any::wait_for() documentation for limitations.
 //
 // This strategy uses a condition variable inside a lock to block the

@@ -95,8 +95,8 @@ class SingleThreadedStrategy {
     return true;
   }
 
-  void SynchronizePublishing(const int64_t& sequence, const Sequence& cursor,
-                             const size_t& delta) {}
+  void SynchronizePublishing(const int64_t&, const Sequence&,
+                             const size_t&) {}
 
  private:
   // We do not need to use atomic values since this function is called by a
@@ -107,7 +107,7 @@ class SingleThreadedStrategy {
   DISALLOW_COPY_MOVE_AND_ASSIGN(SingleThreadedStrategy);
 };
 
-// Optimised strategy can be used when there is a single publisher thread.
+// Strategy to be used when there are multiple publisher threads.
 template <size_t N = kDefaultRingBufferSize>
 class MultiThreadedStrategy {
  public:

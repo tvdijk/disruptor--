@@ -85,7 +85,7 @@ class Sequencer {
   // @param sequence to be published.
   void Publish(const int64_t& sequence, size_t delta = 1) {
     claim_strategy_.SynchronizePublishing(sequence, cursor_, delta);
-    const int64_t new_cursor = cursor_.IncrementAndGet(delta);
+    cursor_.IncrementAndGet(delta);
     wait_strategy_.SignalAllWhenBlocking();
   }
 
