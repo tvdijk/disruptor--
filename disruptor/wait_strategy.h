@@ -314,8 +314,7 @@ class BlockingStrategy {
     return WaitFor(sequence, cursor, dependents, alerted,
                    [this, timeout](Lock& lock) {
                      return std::cv_status::timeout ==
-                            consumer_notify_condition_.wait_for(
-                                lock, std::chrono::microseconds(timeout));
+                            consumer_notify_condition_.wait_for(lock, timeout);
                    });
   }
 
