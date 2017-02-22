@@ -38,8 +38,7 @@ namespace
 
 int main(int arc, char** argv)
 {
-    std::array<int64_t, ringBufferSize> buffer{};
-    Sequencer<int64_t, ringBufferSize, SingleThreadedStrategy<ringBufferSize>, BusySpinStrategy> sequencer(buffer);
+    Sequencer<int64_t, ringBufferSize, SingleThreadedStrategy<ringBufferSize>, BusySpinStrategy> sequencer;
 
     auto barrier = sequencer.NewBarrier({});
 

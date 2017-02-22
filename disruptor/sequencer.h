@@ -39,7 +39,7 @@ template <typename T, size_t N = kDefaultRingBufferSize,
 class Sequencer {
  public:
   // Construct a Sequencer with the selected strategies.
-  Sequencer(std::array<T, N> events) : ring_buffer_(events) {}
+  Sequencer() : ring_buffer_() {}
 
   // Set the sequences that will gate publishers to prevent the buffer
   // wrapping.
